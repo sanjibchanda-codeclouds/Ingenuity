@@ -1,0 +1,56 @@
+/*....footer section
+...........................*/
+.footer {
+  padding: 3.75rem 0;
+
+  p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .footer_box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    @include margin(bottom, 2.25);
+
+    & > * + * {
+      @include margin(top, 0.5);
+    }
+
+    @include media(">=md") {
+      flex-direction: row;
+
+      & > * + * {
+        @include margin(top, 0);
+      }
+
+      ul {
+        @include margin(left, 2);
+      }
+
+      .social {
+        margin-left: auto;
+      }
+    }
+
+    li {
+      display: inline-block;
+      padding: 0 0.5rem;
+    }
+
+    .social {
+      a {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  @include media(">=md") {
+    p {
+      text-align: left;
+    }
+  }
+}

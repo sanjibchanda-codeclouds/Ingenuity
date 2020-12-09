@@ -1,0 +1,117 @@
+//grid area design
+%grid_area {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*....content section
+...........................*/
+.grid_area {
+  @extend %grid_area;
+
+  @include media(">=sm") {
+    .reverse {
+      order: -1;
+    }
+  }
+
+  @include media(">=xl") {
+    min-height: 100vh;
+  }
+
+  & > * {
+    height: 100%;
+    position: relative;
+
+    @include media(">=lg") {
+      min-height: 100vh;
+    }
+
+    .caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: 80%;
+      margin: 0 auto;
+      padding: 1rem;
+      @include margin(bottom, 1);
+      @include border(left, 1px, color(border), solid);
+
+      h3 {
+        font-size: 2rem;
+        font-size: clamp(1.75rem, 3vw, 2rem);
+        font-weight: weight(light);
+        @include margin(bottom, 0.5);
+      }
+    }
+  }
+
+  &_content {
+    max-width: 90%;
+    @include m-auto;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    & > * + * {
+      @include margin(top, 1);
+    }
+
+    @include media(">=md") {
+      max-width: 80%;
+    }
+    @include media(">=lg") {
+      max-width: 70%;
+    }
+  }
+
+  &_img {
+    video {
+      @include size(100%);
+      object-fit: cover;
+    }
+    img {
+      @include size(100%);
+      object-fit: cover;
+    }
+  }
+}
+
+a {
+  i {
+    vertical-align: middle;
+    padding-left: 0.5rem;
+  }
+  &:hover {
+    color: color(link-hover);
+  }
+}
+
+ul.list {
+  display: block;
+  @include margin(bottom, 1);
+
+  li {
+    position: relative;
+    @include padding(left, 1.5);
+    @include padding(bottom, 0.5);
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      background-image: bg("check.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+  }
+}

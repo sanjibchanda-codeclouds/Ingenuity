@@ -1,0 +1,152 @@
+/*....top section
+...........................*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+
+  &_box {
+    @include flex-center();
+    position: relative;
+    padding: 0.625rem 0;
+
+    .menu_box {
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include set-background(color(light));
+        padding: 0;
+        width: 3.75rem;
+        height: 3.75rem;
+        text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+
+    .logo {
+      height: 2.5rem;
+    }
+
+    .get {
+      @include set-background(color(light));
+      color: color(primary);
+      font-size: 0.75rem;
+      letter-spacing: 6px;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 0.25rem 0.5rem;
+      position: absolute;
+      top: 50%;
+      right: 0.75rem;
+      transform: translateY(-50%);
+
+      img {
+        height: 10px;
+      }
+    }
+
+    @include media("<sm") {
+      .get {
+        display: none;
+      }
+    }
+  }
+}
+.sticky {
+  position: relative;
+  top: 0;
+  width: 100%;
+  //   background: rgba(0, 0, 0, 0.5);
+  transition: ease 0.5s;
+  z-index: 9;
+}
+
+/*side nav*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  @include set-background(color(dark));
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding: 1rem 0;
+  text-align: center;
+
+  .logo {
+    height: 2.5rem;
+  }
+
+  ul {
+    @include margin(top, 2);
+    @include flex-center(row);
+  }
+
+  a {
+    font-size: 1rem;
+    line-height: 1.2;
+    letter-spacing: 0.125em;
+    padding: 0.5rem;
+    display: block;
+    transition: 0.3s;
+    color: color(light);
+  }
+
+  .menu {
+    @include flex-center(column);
+
+    a {
+      font-size: 2rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+  }
+
+  .secondary-menu {
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .social-menu {
+    li {
+      @include flex-center(column);
+      @include set-background(color(bg-dark));
+      @include size(3.5rem);
+
+      & + * {
+        @include margin(left, 0.5);
+      }
+
+      a {
+        font-size: 1.5rem;
+        padding: 0;
+      }
+    }
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include set-background(color(light));
+    padding: 0;
+    width: 3.75rem;
+    height: 3.75rem;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

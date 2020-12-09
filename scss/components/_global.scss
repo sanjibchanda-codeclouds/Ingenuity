@@ -1,0 +1,103 @@
+// Default styles
+// .container {
+//   width: 100%;
+//   max-width: 100%;
+//   @include padding(left, 0.938);
+//   @include padding(right, 0.938);
+//   @include m-auto();
+//   box-sizing: border-box;
+
+//   @include media(">=lg") {
+//     width: 73.125rem;
+//   }
+// }
+
+.container {
+  width: 100%;
+  max-width: 90%;
+  @include m-auto();
+  box-sizing: border-box;
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+::selection {
+  @include set-background(color(primary));
+}
+
+.text-center {
+  @include text(center);
+}
+
+.align-center {
+  @include align-center();
+}
+
+hr {
+  @include line();
+}
+
+.success {
+  color: color(success);
+}
+.danger {
+  color: color(error);
+}
+.warning {
+  color: color(warning);
+}
+.underline {
+  text-decoration: underline;
+}
+
+.heading {
+  font-size: 3rem;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: weight(light);
+  color: color(primary);
+  @include margin(bottom, 0.5);
+  margin-top: 0.25em !important;
+}
+.sub_heading {
+  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  letter-spacing: 6px;
+  font-weight: weight(regular);
+  text-transform: uppercase;
+  color: (lighten(color(primary), 40%));
+  line-height: 1.8;
+}
+p {
+  font-size: 1rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.bg_dark {
+  @include set-background(color(dark));
+
+  .heading {
+    color: color(light);
+  }
+  a {
+    color: color(light);
+  }
+}
+.bg_primary {
+  @include set-background(color(primary));
+
+  .heading {
+    color: color(light);
+  }
+
+  a {
+    color: color(light);
+  }
+}
+.bg_light {
+  @include set-background(color(light));
+}
+.bg_light-300 {
+  @include set-background(color(bg));
+}
