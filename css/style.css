@@ -7221,6 +7221,14 @@ hr {
   margin-bottom: 0.5em;
   margin-top: 0.25em !important; }
 
+.heading-sm {
+  font-size: 2.75rem;
+  font-size: clamp(2.25rem, 4vw, 2.75rem);
+  font-weight: 300;
+  color: #03038f;
+  margin-bottom: 0.5em;
+  margin-top: 0.25em !important; }
+
 .sub_heading {
   font-size: 0.75rem;
   font-size: clamp(0.75rem, 2vw, 0.875rem);
@@ -7237,9 +7245,19 @@ p {
 .bg_dark {
   background-color: #000;
   color: #fff; }
-  .bg_dark .heading {
+  .bg_dark .heading,
+  .bg_dark .heading-sm {
     color: #fff; }
   .bg_dark a {
+    color: #fff; }
+
+.bg_dark2 {
+  background-color: #1d202e;
+  color: #fff; }
+  .bg_dark2 .heading,
+  .bg_dark2 .heading-sm {
+    color: #fff; }
+  .bg_dark2 a {
     color: #fff; }
 
 .bg_primary {
@@ -7413,13 +7431,47 @@ p {
   grid-template-rows: auto;
   grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
 
 /*....content section
 ...........................*/
+.grid_area .icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-60%);
+  max-width: 8rem;
+  height: auto;
+  min-height: auto; }
+  @media (min-width: 576px) {
+    .grid_area .icon {
+      top: 0; } }
+  @media (min-width: 992px) {
+    .grid_area .icon {
+      transform: translateY(0%);
+      max-width: 12rem; } }
+  .grid_area .icon.place2 {
+    left: 75%;
+    transform: translate(-50%, -50%);
+    bottom: 40%;
+    top: inherit; }
+    @media (min-width: 576px) {
+      .grid_area .icon.place2 {
+        left: 50%;
+        transform: translate(-50%, -30%);
+        bottom: 0%; } }
+
+.grid_area .icon2 {
+  max-width: 12rem;
+  height: auto;
+  min-height: auto; }
+
 @media (min-width: 576px) {
   .grid_area .reverse {
-    order: -1; } }
+    order: -1; }
+  .grid_area .order-right {
+    order: 2; } }
 
 @media (min-width: 1200px) {
   .grid_area {
@@ -7460,7 +7512,7 @@ p {
   @media (min-width: 768px) {
     .grid_area_content {
       max-width: 80%; } }
-  @media (min-width: 992px) {
+  @media (min-width: 1200px) {
     .grid_area_content {
       max-width: 70%; } }
 
@@ -7469,7 +7521,7 @@ p {
   height: 100%;
   object-fit: cover; }
 
-.grid_area_img img {
+.grid_area_img .grid_img {
   width: 100%;
   height: 100%;
   object-fit: cover; }

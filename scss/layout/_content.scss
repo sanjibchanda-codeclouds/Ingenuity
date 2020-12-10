@@ -5,6 +5,7 @@
   grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 /*....content section
@@ -12,9 +13,50 @@
 .grid_area {
   @extend %grid_area;
 
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-60%);
+    max-width: 8rem;
+    height: auto;
+    min-height: auto;
+
+    @include media(">=sm") {
+      top: 0;
+    }
+
+    @include media(">=lg") {
+      transform: translateY(0%);
+      max-width: 12rem;
+    }
+
+    &.place2 {
+      left: 75%;
+      transform: translate(-50%, -50%);
+      bottom: 40%;
+      top: inherit;
+
+      @include media(">=sm") {
+        left: 50%;
+        transform: translate(-50%, -30%);
+        bottom: 0%;
+      }
+    }
+  }
+
+  .icon2 {
+    max-width: 12rem;
+    height: auto;
+    min-height: auto;
+  }
+
   @include media(">=sm") {
     .reverse {
       order: -1;
+    }
+    .order-right {
+      order: 2;
     }
   }
 
@@ -66,7 +108,8 @@
     @include media(">=md") {
       max-width: 80%;
     }
-    @include media(">=lg") {
+
+    @include media(">=xl") {
       max-width: 70%;
     }
   }
@@ -76,7 +119,7 @@
       @include size(100%);
       object-fit: cover;
     }
-    img {
+    .grid_img {
       @include size(100%);
       object-fit: cover;
     }
