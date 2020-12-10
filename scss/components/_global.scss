@@ -101,3 +101,26 @@ p {
 .bg_light-300 {
   @include set-background(color(bg));
 }
+
+/*.....scroll to top
+......................*/
+.scrollup {
+  @include set-background(color(bg));
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  display: none;
+
+  i {
+    padding: 0;
+  }
+}
