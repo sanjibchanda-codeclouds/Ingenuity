@@ -158,3 +158,18 @@ ul.list {
     }
   }
 }
+
+//content section
+.content_wrapper {
+  @include set-background(color(light));
+  padding: 4rem 0;
+
+  &_box {
+    @include content-gap();
+
+    .info {
+      @include content-gap();
+      @include margin(top, 6);
+    }
+  }
+}

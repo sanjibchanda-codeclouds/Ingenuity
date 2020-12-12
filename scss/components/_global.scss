@@ -1,16 +1,29 @@
 // Default styles
-// .container {
-//   width: 100%;
-//   max-width: 100%;
-//   @include padding(left, 0.938);
-//   @include padding(right, 0.938);
-//   @include m-auto();
-//   box-sizing: border-box;
+.container2 {
+  width: 100%;
+  max-width: 100%;
+  @include padding(left, 0.938);
+  @include padding(right, 0.938);
+  @include m-auto();
+  box-sizing: border-box;
 
-//   @include media(">=lg") {
-//     width: 73.125rem;
-//   }
-// }
+  @include media(">=lg") {
+    width: 73.125rem;
+  }
+}
+
+.container-sm {
+  width: 100%;
+  max-width: 100%;
+  @include padding(left, 0.938);
+  @include padding(right, 0.938);
+  @include m-auto();
+  box-sizing: border-box;
+
+  @include media(">=lg") {
+    width: 62.5rem;
+  }
+}
 
 .container {
   width: 100%;
@@ -120,6 +133,10 @@ p {
 }
 .bg_light-300 {
   @include set-background(color(bg));
+}
+
+.font-sm p {
+  font-size: $fs-sm;
 }
 
 /*.....scroll to top

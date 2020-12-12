@@ -1,0 +1,32 @@
+// .box {
+//   @include set-background(color(dark));
+//   padding: 1rem;
+// }
+
+/*....contact page
+...........................*/
+.contact_wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  .contact_box {
+    padding: 2rem 1rem;
+    width: 100%;
+    margin-top: 0;
+    position: relative;
+
+    @include media(">=690px") {
+      padding: 5rem 2rem;
+      width: 70%;
+      @include margin(top, -3);
+    }
+    @include media(">=lg") {
+      padding: 5rem;
+    }
+
+    .form_box {
+      max-width: 690px;
+    }
+  }
+}

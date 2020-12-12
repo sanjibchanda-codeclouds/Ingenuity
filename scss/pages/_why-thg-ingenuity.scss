@@ -1,0 +1,166 @@
+/*....why-thg-ingenuity page
+...........................*/
+.value_wrap {
+  @include set-background(color(light));
+  padding: 4rem 0;
+
+  .value_box {
+    ul {
+      @include margin(top, 2);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      & > * {
+        flex-basis: 100%;
+        @include border(left, 1px, color(accent), solid);
+        padding: 1rem;
+        @include margin(bottom, 0.75);
+
+        @include media(">=sm") {
+          flex-basis: 50%;
+        }
+
+        .title {
+          color: color(dark);
+          font-size: 1.125rem;
+        }
+
+        p {
+          font-size: $fs-sm;
+          color: color(secondary);
+        }
+      }
+
+      li {
+        @include content-gap(0.5);
+      }
+    }
+  }
+}
+
+.Ingenuity_wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  @include media(">=690px") {
+    background-image: bg("ingenuity.jpg");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: left bottom;
+    @include padding(bottom, 8);
+  }
+
+  &_box {
+    @include set-background(color(primary-light));
+    padding: 2rem 1rem;
+    width: 100%;
+    margin-top: 0;
+    position: relative;
+
+    @include media(">=690px") {
+      padding: 5rem 2rem;
+      width: 70%;
+      @include margin(top, -3);
+    }
+    @include media(">=lg") {
+      padding: 5rem;
+    }
+
+    &_inner {
+      max-width: 690px;
+      @include content-gap(1);
+
+      .heading-sm {
+        color: color(light);
+      }
+    }
+  }
+}
+
+.approach_wrap {
+  padding: 3.75rem 0;
+
+  .approach_box {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-gap: 2rem;
+
+    @include media(">=md") {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    @include media(">=lg") {
+      grid-gap: 3rem;
+    }
+
+    &_aside {
+      @include set-background(color(light));
+      padding: 3rem 1rem;
+      @include content-gap(1);
+
+      @include media(">=xl") {
+        padding: 3rem;
+      }
+    }
+
+    &_content {
+      @include set-background(color(light));
+      @include content-gap(1);
+
+      td {
+        i {
+          font-size: 1.25rem;
+        }
+        &.primary {
+          color: color(primary);
+        }
+        &.secondary {
+          color: color(primary-light-100);
+        }
+        &.dark {
+          color: color(dark);
+        }
+        &.light {
+          color: color(bg);
+        }
+      }
+    }
+  }
+}
+
+.list li {
+  position: relative;
+  padding-left: 1.5em;
+  padding-bottom: 0.5em;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background-image: url(../images/check.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+  only screen and (min--moz-device-pixel-ratio: 1.25),
+  only screen and (-o-min-device-pixel-ratio: 1.25/1),
+  only screen and (min-device-pixel-ratio: 1.25),
+  only screen and (min-resolution: 200dpi),
+  only screen and (min-resolution: 1.25dppx) {
+  @include media(">=690px") {
+    .Ingenuity_wrap {
+      background-image: bg("ingenuity@2x.jpg");
+      background-size: 60%;
+    }
+  }
+}

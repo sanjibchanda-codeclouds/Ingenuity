@@ -1,24 +1,21 @@
 .table {
   width: 100%;
   max-width: 100%;
-  @include margin(bottom, 2);
   @include set-background(color(light));
+  color: color(secondary);
   @include font-size($fs-sm);
   @include text(center);
   font-family: $ff-heading;
 
-  @include media("<lg") {
+  @include media("<sm") {
     @include font-size(0.75rem);
-  }
-  @include media("<480px") {
-    @include font-size(0.5rem);
   }
 
   th,
   td {
-    padding: 0.5rem;
+    padding: 0.938rem;
     vertical-align: top;
-    border-top: 1px solid $border;
+    border-top: 1px solid color(border);
 
     @include media("<479px") {
       padding: 0.375rem;
@@ -27,12 +24,12 @@
 
   thead th {
     vertical-align: middle;
-    border-bottom: 2px solid $border;
-    @include set-background(lighten(color(primary), 30%));
+    border-bottom: 2px solid color(border);
+    // @include set-background(lighten(color(primary), 30%));
   }
 
   tbody + tbody {
-    border-top: 2px solid $border;
+    border-top: 2px solid color(border);
   }
 }
 
@@ -53,7 +50,7 @@
 .table-hover {
   tbody tr {
     @include hover() {
-      @include set-background(color(bg));
+      @include set-background(lighten(color(bg), 5%));
     }
   }
 }
@@ -69,4 +66,16 @@
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+}
+
+//custom design
+table td:first-child {
+  text-align: left;
+}
+table th:first-child {
+  @include set-background(color(bg));
+}
+table th:nth-child(2),
+table td:nth-child(2) {
+  @include set-background(darken(color(border), 5%));
 }

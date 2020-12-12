@@ -24,8 +24,8 @@
 }
 
 //content gap
-@mixin content-gap() {
+@mixin content-gap($value: 1) {
   & > * + * {
-    @include margin(top, 1);
+    @include margin(top, $value);
   }
 }

@@ -39,16 +39,13 @@
 }
 .btn-secondary {
   @extend %btn;
-  max-width: 300px;
+  max-width: 280px;
   width: 100%;
   @include set-background(color(bg));
-  border: 1px solid $primary;
-  color: color(primary);
-  display: block;
-  margin: 0px auto;
+  border: 1px solid color(bg);
 
   @include hover-focus {
-    border: 1px solid $secondary;
+    border: 1px solid color(secondary);
   }
 }
 

@@ -7,6 +7,10 @@
   width: 100%;
   z-index: 9;
 
+  &-bg {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.160784), transparent);
+  }
+
   &_box {
     @include flex-center();
     position: relative;
